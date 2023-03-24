@@ -81,14 +81,16 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-      - name: Mirror with specific cache
-        uses: Yikun/hub-mirror-action@master
+      - name: Upload gitee
+        uses: okou19900722/gitee-pages@v1
         with:
-          src: github/calmcatcc
-          dst: gitee/vanv
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.8df57c0139eede1caa812f2e2ec31bab }}
-          clone_style: "ssh"
+          username: "vanv77@outlook.com"
+          password: ${{ secrets.#@#Y^bi28AxZfb8NqDU3 }}
+          repository: "git@github.com:calmcatcc/juzi.git"
+          branch: "master"
+          directory: "./out"
+          #是否开启https
+          https: true
           
 
   # Deployment job
