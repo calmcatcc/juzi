@@ -81,7 +81,15 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-
+      - name: Mirror with specific cache
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/calmcatcc
+          dst: gitee/vanv
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.8df57c0139eede1caa812f2e2ec31bab }}
+          clone_style: "ssh"
+          
 
   # Deployment job
   deploy:
