@@ -93,3 +93,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@master #开源actions包
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        with:
+          source-repo: "git@github.com:calmcatcc/juzi.git" # github仓库地址
+          destination-repo: "git@gitee.com:vanv_space/juzi.git" # gitee仓库地址
+
