@@ -88,7 +88,7 @@ jobs:
           dst: gitee/vanv/juzi
           dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.8df57c0139eede1caa812f2e2ec31bab }}
-          cache_path: /public
+          clone_style: "ssh"
 
 
   # Deployment job
