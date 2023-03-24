@@ -85,7 +85,7 @@ jobs:
         uses: okou19900722/gitee-pages@v1
         with:
           username: "vanv77@outlook.com"
-          password: ${{ secrets.#@#Y^bi28AxZfb8NqDU3 }}
+          password: ${{ secrets.bi28AxZfb8NqDU3 }}
           repository: "git@github.com:calmcatcc/juzi.git"
           branch: "master"
           directory: "./out"
