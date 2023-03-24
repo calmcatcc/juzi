@@ -84,7 +84,7 @@ jobs:
       - name: Upload gitee
         uses: okou19900722/gitee-pages@v1
         with:
-          username: "vanv77@outlook.com"
+          username: "19923383940"
           password: ${{ secrets.bi28AxZfb8NqDU3 }}
           repository: "git@github.com:calmcatcc/juzi.git"
           branch: "master"
