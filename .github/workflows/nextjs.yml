@@ -81,13 +81,15 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-      - name: Upload gitee
-        uses: wearerequired/git-mirror-action@master #开源actions包
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+      - name: Mirror with specific cache
+        uses: Yikun/hub-mirror-action@master
         with:
-          source-repo: "git@github.com:calmcatcc/juzi.git" # github仓库地址
-          destination-repo: "git@gitee.com:vanv_space/juzi.git" # gitee仓库地址
+          src: github/calmcatcc/juzi
+          dst: gitee/vanv/juzi
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.8df57c0139eede1caa812f2e2ec31bab }}
+          cache_path: ./out
+
 
   # Deployment job
   deploy:
